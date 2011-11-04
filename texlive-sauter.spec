@@ -87,6 +87,7 @@ bbm, bbold, rsfs and wasy fonts.
 %{_texmfdistdir}/fonts/source/public/sauter/c-cmti.mf
 %{_texmfdistdir}/fonts/source/public/sauter/c-cmtt.mf
 %{_texmfdistdir}/fonts/source/public/sauter/c-sigma.mf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -97,3 +98,5 @@ bbm, bbold, rsfs and wasy fonts.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
