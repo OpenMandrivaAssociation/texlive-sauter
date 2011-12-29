@@ -16,7 +16,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
 Extensions, originally to the CM fonts, providing a
@@ -25,20 +24,12 @@ sizes, for a large range of sizes. The scheme has now been
 extended to a range of other fonts, including the AMS fonts,
 bbm, bbold, rsfs and wasy fonts.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -88,7 +79,6 @@ bbm, bbold, rsfs and wasy fonts.
 %{_texmfdistdir}/fonts/source/public/sauter/c-cmti.mf
 %{_texmfdistdir}/fonts/source/public/sauter/c-cmtt.mf
 %{_texmfdistdir}/fonts/source/public/sauter/c-sigma.mf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -99,5 +89,3 @@ bbm, bbold, rsfs and wasy fonts.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
