@@ -6,7 +6,7 @@
 # catalog-version 2.4
 Name:		texlive-sauter
 Version:	2.4
-Release:	1
+Release:	2
 Summary:	Wide range of design sizes for CM fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/cm/sauter
