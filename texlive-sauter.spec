@@ -1,17 +1,11 @@
-# revision 13293
-# category Package
-# catalog-ctan /fonts/cm/sauter
-# catalog-date 2008-12-30 21:17:11 +0100
-# catalog-license gpl
-# catalog-version 2.4
 Name:		texlive-sauter
-Version:	2.4
-Release:	12
+Version:	13293
+Release:	1
 Summary:	Wide range of design sizes for CM fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/cm/sauter
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sauter.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sauter.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ extended to a range of other fonts, including the AMS fonts,
 bbm, bbold, rsfs and wasy fonts.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -82,24 +76,10 @@ bbm, bbold, rsfs and wasy fonts.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0
+%autosetup -p1 -c
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.4-2
-+ Revision: 755791
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.4-1
-+ Revision: 719482
-- texlive-sauter
-- texlive-sauter
-- texlive-sauter
-- texlive-sauter
-
