@@ -3,7 +3,7 @@ Version:	13293
 Release:	2
 Summary:	Wide range of design sizes for CM fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/cm/sauter
+URL:		https://www.ctan.org/tex-archive/fonts/cm/sauter
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sauter.r%{version}.tar.xz
 BuildArch:	noarch
